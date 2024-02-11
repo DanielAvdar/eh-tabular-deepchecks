@@ -12,29 +12,28 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
-        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12' ]
+        os: [ windows-latest ]
+        python-version: [ '3.8', '3.9', '3.10', '3.11', '3.12' ]
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies macos or linux
-      if: matrix.os != 'windows-latest'
-      run: |
-        make env
-        make freeze
-        pip install -r .\requirements\dev-requirements.txt
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
 
-    - name: Install dependencies windows
-      if: matrix.os == 'windows-latest'
-      run: |
+
+      - name: Install dependencies windows
+        if: matrix.os == 'windows-latest'
+        run: |
           pip install -e .
           pip install -r .\requirements\dev-requirements.txt
+          pip install -r .\requirements\nlp-requirements.txt
+          pip install -r .\requirements\nlp-prop-requirements.txt
+          pip install -r .\requirements\vision-requirements.txt
 
-    - name: Test with pytest
-      run: |
-        pytest .\tests\tabular
+
+      - name: Test with pytest
+        run: |
+          pytest
     continue-on-error: true
