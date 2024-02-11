@@ -24,7 +24,10 @@ jobs:
     - name: Install dependencies macos or linux
       if: matrix.os != 'windows-latest'
       run: |
-        make test
+        make env
+        make freeze
+        pip install -r .\requirements\dev-requirements.txt
+
     - name: Install dependencies windows
       if: matrix.os == 'windows-latest'
       run: |
