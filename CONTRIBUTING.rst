@@ -132,6 +132,10 @@ To create a virtual environment in python, run the following command:
 .. code:: bash
 
    python -m venv <name_of_your_virtual_environment>
+.. warning::
+
+   Be aware that Python versions 3.11 and 3.12 may encounter issues when installing development dependencies.
+
 
 Installing dependencies
 ------------------------
@@ -145,7 +149,7 @@ the dependencies for your virtual environment by running the following command:
 
    .. code:: bash
 
-      pip install -r .\requirements\requirements.txt
+      pip install -e .
 
 - To install development dependencies:
 

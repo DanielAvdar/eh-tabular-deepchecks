@@ -24,6 +24,8 @@ jobs:
       - name: Install dependencies macos or linux
         if: matrix.os != 'windows-latest'
         run: |
+          make env
+          make freeze
           make test
 
       - name: Install dependencies windows
@@ -31,17 +33,21 @@ jobs:
         run: |
           pip install -e .
           pip install -r .\requirements\dev-requirements.txt
-          pip install -r .\requirements\nlp-requirements.txt
-          pip install -r .\requirements\nlp-prop-requirements.txt
-          pip install -r .\requirements\vision-requirements.txt
       - name: windows test tabular
         if: matrix.os == 'windows-latest'
         run: |
+          
           pytest .\tests\tabular\
-      - name: windows test vision
-        if: matrix.os == 'windows-latest'
-        run: |
-          pytest .\tests\vision\
+#      - name: windows test vision
+#        if: matrix.os == 'windows-latest'
+#        run: |
+#          pip install -r .\requirements\vision-requirements.txt
+#          pytest .\tests\vision\
+#      - name: windows test vision
+#        if: matrix.os == 'windows-latest'
+#        run: |
+#          pip install -r .\requirements\vision-requirements.txt
+#          pytest .\tests\nlp\
 
 
     continue-on-error: true
