@@ -34,7 +34,14 @@ jobs:
           pip install -r .\requirements\nlp-requirements.txt
           pip install -r .\requirements\nlp-prop-requirements.txt
           pip install -r .\requirements\vision-requirements.txt
-          pytest .\tests
+      - name: windows test tabular
+        if: matrix.os == 'windows-latest'
+        run: |
+          pytest .\tests\tabular\
+      - name: windows test vision
+        if: matrix.os == 'windows-latest'
+        run: |
+          pytest .\tests\vision\
 
 
     continue-on-error: true

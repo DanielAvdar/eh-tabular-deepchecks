@@ -15,7 +15,7 @@ import typing as t
 
 import numpy as np
 import pytest
-from deepchecks.nlp.datasets import load_dataset
+from datasets import load_dataset
 from nltk import download as nltk_download
 from nltk.corpus import movie_reviews
 
