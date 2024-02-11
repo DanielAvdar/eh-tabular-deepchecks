@@ -31,7 +31,7 @@ jobs:
     - name: Install dependencies windows
       if: matrix.os == 'windows-latest'
       run: |
-          pip install -r .\requirements\requirements.txt
+          pip install -e .
           pip install -r .\requirements\dev-requirements.txt
 
     - name: Test with pytest
