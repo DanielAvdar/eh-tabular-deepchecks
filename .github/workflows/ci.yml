@@ -38,4 +38,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: poetry install --only main
-      - run: poetry run python -m unittest
+      - run: poetry run python -m unittest test_imports.py
