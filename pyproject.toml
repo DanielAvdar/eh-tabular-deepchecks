@@ -29,7 +29,7 @@ scipy = "*"
 plotly = ">=5.13.1"
 matplotlib = ">=3.3.4"
 beautifulsoup4 = ">=4.11.1"
-requests = ">=2.22.0"
+#requests = ">=2.22.0"
 #jupyter-server = ">=2.7.2"
 jinja2 = ">=3.0.1"
 
