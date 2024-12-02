@@ -21,6 +21,7 @@ tqdm = ">=4.62.3"
 category-encoders = ">=2.3.0"
 matplotlib = ">=3.0.1"
 beautifulsoup4 = ">=4.11.1"
+ipywidgets = ">=8.0.1"
 
 jinja2 = ">=3.0.1"
 
