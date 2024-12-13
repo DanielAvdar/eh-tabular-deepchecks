@@ -20,7 +20,20 @@ import numpy as np
 
 # pylint: disable-all
 import pandas as pd
-from hamcrest import *
+
+# from hamcrest import *
+from hamcrest import (
+    all_of,
+    assert_that,
+    calling,
+    contains_exactly,
+    equal_to,
+    has_items,
+    has_length,
+    has_property,
+    instance_of,
+    raises,
+)
 
 
 class DummyCheck(TrainTestCheck):
