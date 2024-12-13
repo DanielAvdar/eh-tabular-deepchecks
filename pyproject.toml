@@ -14,7 +14,7 @@ packages = [{ include = "deepchecks", from = "." }]
 [tool.poetry.dependencies]
 python = ">=3.9,<3.13"
 pandas = ">=1.1.5,<2.3.0"
-scikit-learn = "*"
+scikit-learn = "<1.6.0"
 jsonpickle = ">=2"
 PyNomaly = ">=0.3.3"
 tqdm = ">=4.62.3"
@@ -28,6 +28,8 @@ jinja2 = ">=3.0.1"
 
 ipykernel = ">=5.3.0"
 ipywidgets = ">=8"
+setuptools = "*"
+
 [tool.poetry.dev-dependencies]
 pytest = ">=8.0.0"
 pytest-cov = "*"
