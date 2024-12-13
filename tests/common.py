@@ -33,7 +33,22 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.express as px
-from hamcrest import *
+
+# from hamcrest import *  # noqa
+# from hamcrest import (
+from hamcrest import (
+    all_of,
+    any_of,
+    assert_that,
+    contains_exactly,
+    contains_string,
+    equal_to,
+    has_property,
+    instance_of,
+    only_contains,
+)
+
+# )
 from hamcrest.core.base_matcher import BaseMatcher
 from hamcrest.core.matcher import Matcher
 from plotly.graph_objects import Histogram

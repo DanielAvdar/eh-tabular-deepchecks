@@ -15,7 +15,9 @@ from tests.base.utils import equal_condition_result
 
 import numpy as np
 import pandas as pd
-from hamcrest import *
+
+# from hamcrest import *
+from hamcrest import assert_that, equal_to, greater_than, has_entries, has_items, has_length
 
 
 def test_percent_of_nulls():

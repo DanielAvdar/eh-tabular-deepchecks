@@ -128,5 +128,5 @@ def test_compare_other_package_iris(iris_dataset):
     )
     dist = dist.round(5).astype(np.float32)
     for i in range(data.shape[0]):
-        closest_to_i = gower.gower_topn(data.iloc[i: i + 1, :4], data.iloc[:, :4], n=3)
+        closest_to_i = gower.gower_topn(data.iloc[i : i + 1, :4], data.iloc[:, :4], n=3)
         assert (closest_to_i["values"].round(5) == dist[i, :]).all()
